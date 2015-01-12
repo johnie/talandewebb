@@ -4,7 +4,7 @@
 
 ## Getting started
 
-Download the [latest zip](https://github.com/johnie/talandewebb/archive/master.zip) and upload it via the plugins in WordPress or unzip it in the `plugins` directory.
+Download the [latest zip](https://github.com/johnie/talandewebb/archive/master.zip) and upload it via the plugins page in WordPress or unzip it in the `plugins` directory.
 
 ## Locale
 
