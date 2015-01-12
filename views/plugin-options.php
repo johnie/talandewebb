@@ -15,7 +15,7 @@
           <label>Shortcode</label>
         </th>
         <td>
-          <input type="text" value="[talandewebb]" class="regular-text" onclick="this.focus();this.select()">
+          <input type="text" value="[talandewebb]Aktivera Talande Webb[/talandewebb]" class="regular-text" onclick="this.focus();this.select()">
           <p class="description">T.ex <code>[talandewebb class="tw-btn"]</code> - <code>class</code> är friviligt.</p>
         </td>
       </tr>

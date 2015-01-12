@@ -93,6 +93,39 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
 
 
     /**
+     * Allow the talandewebb shortcode to be used.
+     *
+     * @access public
+     * @param array $atts
+     * @param string $content
+     * @return string
+     */
+    public function shortcode( $atts, $content = null ) {
+
+      extract( shortcode_atts( array(
+        'class' => false
+      ), $atts ) );
+
+      // Build the list of class names
+      $classes = array(
+        $this->tag
+      );
+
+      if ( ! empty( $class ) ) {
+        $classes[] = esc_attr( $class );
+      }
+
+      // Output the terminal
+      ob_start();
+      ?>
+        <a href="#" class="<?php esc_attr_e( implode( ' ', $classes ) ); ?>" onclick="toggleBar();"><?php echo $content; ?></a>
+      <?php
+      return ob_get_clean();
+
+    }
+
+
+    /**
      * Enqueue the required scripts.
      *
      * @access public
