@@ -81,7 +81,7 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
 
       // Don't load Talande Webb in admin
       if ( ! is_admin() ):
-        add_action( 'wp_head', array( $this, 'register_tw_script') );
+        add_action( 'wp_head', array( $this, '_tw_enqueue') );
       endif;
 
       // Add options page
@@ -95,7 +95,7 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
      *
      * @access public
      */
-    public function register_tw_script() {
+    public function _tw_enqueue() {
 
       echo '<script type="text/javascript">var _baLocale = "se", _baMode = " ";</script>';
       echo '<script type="text/javascript" src="https://www.browsealoud.com/plus/scripts/ba.js"></script>';
