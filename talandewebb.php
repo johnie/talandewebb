@@ -58,7 +58,7 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
      * @access public
      */
     function _tw_settings_menu() {
-      add_theme_page( __( $name, $tag ), __( $name, $tag ), 'manage_options', 'tw-plugin-options', '_tw_render_plugin_options' );
+      add_menu_page( __( 'Talande Webb Plus', 'talandewebb' ), __( 'Talande Webb Plus', 'talandewebb' ), 'manage_options', 'tw-plugin-options', '_tw_render_plugin_options' );
     }
 
 
@@ -85,7 +85,7 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
       endif;
 
       // Add options page
-      add_action( 'admin_menu', '_tw_settings_menu' );
+      add_action( 'admin_menu', array( $this, '_tw_settings_menu') );
 
     }
 
