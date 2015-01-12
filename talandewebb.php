@@ -58,7 +58,7 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
      * @access public
      */
     function _tw_settings_menu() {
-      add_options_page( __( 'Talande Webb Plus', 'talandewebb' ), __( 'Talande Webb Plus', 'talandewebb' ), 'manage_options', 'tw-plugin-options', array( $this, '_tw_render_plugin_options' ) );
+      add_options_page( __( $this->name, $this->tag ), __( $this->name, $this->tag ), 'manage_options', 'tw-plugin-options', array( $this, '_tw_render_plugin_options' ) );
     }
 
 
