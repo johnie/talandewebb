@@ -54,6 +54,7 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
     
     /**
      * Languages codes.
+     * @var array
      */
     protected $languages = array(
         'sv-SE' => 'se',
@@ -66,6 +67,7 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
     
     /**
      * The default language.
+     * @var string
      */
     protected $defaultLanguage = 'se';
 
