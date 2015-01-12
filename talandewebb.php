@@ -38,7 +38,7 @@ class TalandeWebb {
 
   public function register_tw_script() {
 
-    echo '<script type="text/javascript">var _baLocale = 'se', _baMode = ' ';</script>';
+    echo '<script type="text/javascript">var _baLocale = "se", _baMode = " ";</script>';
     echo '<script type="text/javascript" src="https://www.browsealoud.com/plus/scripts/ba.js"></script>';
 
   }
