@@ -25,24 +25,33 @@
 
 */
 
-class TalandeWebb {
-
-  function __construct() {
-
-    // Don't load Talande Webb in admin
-    if ( ! is_admin() ):
-      add_action( 'wp_head', array( $this, 'register_tw_script') );
-    endif;
-
-  }
-
-  public function register_tw_script() {
-
-    echo '<script type="text/javascript">var _baLocale = "se", _baMode = " ";</script>';
-    echo '<script type="text/javascript" src="https://www.browsealoud.com/plus/scripts/ba.js"></script>';
-
-  }
-
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+  exit;
 }
 
-$talandewebb = new TalandeWebb();
+if ( ! class_exists( 'TalandeWebb' ) ) {
+
+  class TalandeWebb {
+
+    function __construct() {
+
+      // Don't load Talande Webb in admin
+      if ( ! is_admin() ):
+        add_action( 'wp_head', array( $this, 'register_tw_script') );
+      endif;
+
+    }
+
+    public function register_tw_script() {
+
+      echo '<script type="text/javascript">var _baLocale = "se", _baMode = " ";</script>';
+      echo '<script type="text/javascript" src="https://www.browsealoud.com/plus/scripts/ba.js"></script>';
+
+    }
+
+  }
+
+  new TalandeWebb();
+
+}
