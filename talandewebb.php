@@ -84,8 +84,10 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
         add_action( 'wp_head', array( $this, '_tw_enqueue') );
       endif;
 
-      // Add options page
-      add_action( 'admin_menu', array( $this, '_tw_settings_menu') );
+      if ( is_admin() ):
+        // Add options page
+        add_action( 'admin_menu', array( $this, '_tw_settings_menu') );
+      endif;        
 
     }
 
