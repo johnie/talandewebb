@@ -22,4 +22,4 @@ If the plugin can't load the script files, then that might be because you haven'
 
 ### Licence
 
-GPL2 © [FunkaNU](http://www.funkanu.com/)
+GPL2 © [Funka Nu](http://www.funkanu.com/)
