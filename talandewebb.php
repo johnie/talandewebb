@@ -31,7 +31,7 @@ class TalandeWebb {
 
     // Don't load Talande Webb in admin
     if ( ! is_admin() ):
-      add_action( 'wp_head', 'register_tw_script' );
+      add_action( 'wp_head', array( $this, 'register_tw_script') );
     endif;
 
   }
