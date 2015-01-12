@@ -138,19 +138,19 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
       $locale = get_bloginfo( 'language' );
 
       switch ($locale) {
-        case 'sv_SE':
-          $locale = 'en';
+        case 'sv-SE':
+          $locale = 'se';
           break;
-        case 'nb_NO':
+        case 'nb-NO':
           $locale = 'no';
           break;
         case 'fi':
           $locale = 'fi';
           break;
-        case 'de_DE':
+        case 'de-DE':
           $locale = 'de';
           break;
-        case 'en_GB':
+        case 'en-GB':
           $locale = 'uk';
           break;
         default:
