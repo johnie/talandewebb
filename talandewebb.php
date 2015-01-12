@@ -54,6 +54,24 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
 
 
     /**
+     * Add plugin settings menu
+     * @access public
+     */
+    function _tw_settings_menu() {
+      add_theme_page( __( $name, $tag ), __( $name, $tag ), 'manage_options', 'tw-plugin-options', '_tw_render_plugin_options' );
+    }
+
+
+    /**
+     * Render plugin settings page
+     * @access public
+     */
+    function _tw_render_plugin_options() {
+      include_once dirname( __FILE__ ) . '/views/plugin-options.php';
+    }
+
+
+    /**
      * Initiate the plugin by setting the default values and assigning any
      * required actions and filters.
      *
@@ -65,6 +83,9 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
       if ( ! is_admin() ):
         add_action( 'wp_head', array( $this, 'register_tw_script') );
       endif;
+
+      // Add options page
+      add_action( 'admin_menu', '_tw_settings_menu' );
 
     }
 
