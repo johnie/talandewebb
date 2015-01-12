@@ -153,9 +153,10 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
         case 'en-GB':
           $locale = 'uk';
           break;
-        default:
+        case 'en-US':
           $locale = 'en';
           break;
+        default:
       }
 
       echo '<script type="text/javascript">var _baLocale = "' . $locale . '", _baMode = " ";</script>';
