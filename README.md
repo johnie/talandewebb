@@ -16,6 +16,10 @@ Currently supported languages are:
 * Finnish
 * German
 
+## Support
+
+If the plugin can't load the script files, then that might be because you haven't been added to the list of accessible sites. If that is the case, please contact [Funka Nu](http://www.funkanu.com/sv/Om-Funka/Funka-Nu-AB/Kontakta-oss/)
+
 ### Licence
 
 GPL2 © [FunkaNU](http://www.funkanu.com/)
