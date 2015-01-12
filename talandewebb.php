@@ -34,6 +34,25 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
 
   class TalandeWebb {
 
+    /**
+     * Tag identifier used by file includes and selector attributes.
+     * @var string
+     */
+    protected $tag = 'talandewebb';
+
+    /**
+     * User friendly name used to identify the plugin.
+     * @var string
+     */
+    protected $name = 'Talande Webb Plus';
+
+    /**
+     * Current version of the plugin.
+     * @var string
+     */
+    protected $version = '1.0.0';
+
+
     function __construct() {
 
       // Don't load Talande Webb in admin
