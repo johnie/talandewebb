@@ -51,7 +51,23 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
      * @var string
      */
     protected $version = '1.0.0';
-
+    
+    /**
+     * Languages codes.
+     */
+    protected $languages = array(
+        'sv-SE' => 'se',
+        'nb-NO' => 'no',
+        'fi'    => 'fi',
+        'de-DE' => 'de',
+        'en-GB' => 'uk',
+        'en-US' => 'en'
+    );
+    
+    /**
+     * The default language.
+     */
+    protected $defaultLanguage = 'se';
 
     /**
      * Add plugin settings menu
@@ -135,31 +151,15 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
      */
     public function _tw_enqueue() {
 
-      $locale = get_bloginfo( 'language' );
-
-      switch ($locale) {
-        case 'sv-SE':
-          $locale = 'se';
-          break;
-        case 'nb-NO':
-          $locale = 'no';
-          break;
-        case 'fi':
-          $locale = 'fi';
-          break;
-        case 'de-DE':
-          $locale = 'de';
-          break;
-        case 'en-GB':
-          $locale = 'uk';
-          break;
-        case 'en-US':
-          $locale = 'en';
-          break;
-        default:
+      $lang = get_bloginfo( 'language' );
+      
+      if ( isset( $this->language[$lang] ) ) {
+        $lang = $this->language[$lang];
+      } else {
+        $lang = $this->defaultLanguage;
       }
 
-      echo '<script type="text/javascript">var _baLocale = "' . $locale . '", _baMode = " ";</script>';
+      echo '<script type="text/javascript">var _baLocale = "' . $lang . '", _baMode = " ";</script>';
       echo '<script type="text/javascript" src="https://www.browsealoud.com/plus/scripts/ba.js"></script>';
 
     }
