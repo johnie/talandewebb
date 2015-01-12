@@ -132,7 +132,27 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
      */
     public function _tw_enqueue() {
 
-      echo '<script type="text/javascript">var _baLocale = "se", _baMode = " ";</script>';
+      $locale = get_bloginfo( 'language' );
+
+      switch ($locale) {
+        case 'sv_SE':
+          $locale = 'en';
+          break;
+        case 'nb_NO':
+          $locale = 'no';
+          break;
+        case 'fi':
+          $locale = 'fi';
+          break;
+        case 'en_GB':
+          $locale = 'uk';
+          break;
+        default:
+          $locale = 'en';
+          break;
+      }
+
+      echo '<script type="text/javascript">var _baLocale = "' . $locale . '", _baMode = " ";</script>';
       echo '<script type="text/javascript" src="https://www.browsealoud.com/plus/scripts/ba.js"></script>';
 
     }
