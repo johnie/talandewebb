@@ -90,7 +90,7 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
       endif;
 
       // Add shortcode
-      add_shortcode( $this->tag, array( $this, 'shortcode' ) );
+      add_shortcode( $this->tag, array( $this, '_tw_shortcode' ) );
 
     }
 
@@ -103,7 +103,7 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
      * @param string $content
      * @return string
      */
-    public function shortcode( $atts, $content = null ) {
+    public function _tw_shortcode( $atts, $content = null ) {
 
       extract( shortcode_atts( array(
         'class' => false
