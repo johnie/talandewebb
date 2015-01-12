@@ -87,7 +87,10 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
       if ( is_admin() ):
         // Add options page
         add_action( 'admin_menu', array( $this, '_tw_settings_menu') );
-      endif;        
+      endif;
+
+      // Add shortcode
+      add_shortcode( $this->tag, array( $this, 'shortcode' ) );
 
     }
 
