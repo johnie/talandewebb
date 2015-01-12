@@ -53,6 +53,12 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
     protected $version = '1.0.0';
 
 
+    /**
+     * Initiate the plugin by setting the default values and assigning any
+     * required actions and filters.
+     *
+     * @access public
+     */
     function __construct() {
 
       // Don't load Talande Webb in admin
@@ -62,6 +68,12 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
 
     }
 
+
+    /**
+     * Enqueue the required scripts.
+     *
+     * @access public
+     */
     public function register_tw_script() {
 
       echo '<script type="text/javascript">var _baLocale = "se", _baMode = " ";</script>';
