@@ -31,13 +31,16 @@ class TalandeWebb {
 
     // Don't load Talande Webb in admin
     if ( ! is_admin() ):
-      add_action( 'wp_enqueue_scripts', array( $this, 'register_tw_script' ) );
+      add_action( 'wp_head', 'register_tw_script' );
     endif;
 
   }
 
   public function register_tw_script() {
-    wp_enqueue_script( 'talandewebb-script', plugins_url( 'talandewebb/talandewebb.js' ) );
+
+    echo '<script type="text/javascript">var _baLocale = 'se', _baMode = ' ';</script>';
+    echo '<script type="text/javascript" src="https://www.browsealoud.com/plus/scripts/ba.js"></script>';
+
   }
 
 }
