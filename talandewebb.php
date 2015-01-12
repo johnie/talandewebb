@@ -144,6 +144,9 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
         case 'fi':
           $locale = 'fi';
           break;
+        case 'de_DE':
+          $locale = 'de';
+          break;
         case 'en_GB':
           $locale = 'uk';
           break;
