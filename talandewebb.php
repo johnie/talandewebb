@@ -67,7 +67,7 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
      * @access public
      */
     function _tw_render_plugin_options() {
-      include_once __DIR__ . '/views/tw-plugin-options.php';
+      include_once __DIR__ . '/views/plugin-options.php';
     }
 
 
