@@ -40,14 +40,14 @@
 
   <h3 class="title">För utvecklare</h3>
 
-  <p><strong>Med JavaScript:</strong></p>
+  <p><strong>JavaScript:</strong></p>
 
   <code style="display: inline-block;">
 <pre>var btn = document.getElementById('tw-btn');
 btn.addEventListener('click', toggleBar());</pre>
   </code>
 
-  <p><strong>Med jQuery:</strong></p>
+  <p><strong>jQuery:</strong></p>
 
   <code style="display: inline-block;">
 <pre>var btn = $('#tw-btn');
