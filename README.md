@@ -1,6 +1,6 @@
 # Talande Webb Plus
 
-> WordPress plugin for FunkaNu screen reader application Talande Webb Plus
+> WordPress plugin for Funka Nu screen reader application Talande Webb Plus
 
 ## Getting started
 
