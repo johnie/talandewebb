@@ -14,7 +14,9 @@ Download the [latest zip](https://github.com/johnie/talandewebb/archive/master.z
 
 **Link**
 
-`<a href="#" onclick="toggleBar();">Aktivera Talande Webb</a>`
+```html
+<a href="#" onclick="toggleBar();">Aktivera Talande Webb</a>
+```
 
 **JavaScript**
 
@@ -30,7 +32,7 @@ Download the [latest zip](https://github.com/johnie/talandewebb/archive/master.z
 
 ```javascript
 ;(function () {
-  var btn = $(#'tw-btn');
+  var btn = $('#tw-btn');
 
   btn.on('click', toggleBar());
 })();
