@@ -1,0 +1,7 @@
+{
+  "name": "johnie/talandewebb",
+  "description": "WordPress plugin for Funka Nu screen reader application Talande Webb Plus",
+  "require": {
+    "php": ">=5.3.0"
+  }
+}
