@@ -6,6 +6,36 @@
 
 Download the [latest zip](https://github.com/johnie/talandewebb/archive/master.zip) and upload it via the plugins page in WordPress or unzip it in the `plugins` directory.
 
+### Usage
+
+**Shortcode**
+
+`[talandewebb class="optional-class"]Aktivera Talande Webb[/talandewebb]`
+
+**Link**
+
+`<a href="#" onclick="toggleBar();">Aktivera Talande Webb</a>`
+
+**JavaScript**
+
+```javascript
+;(function () {
+  var btn = document.getElementById('tw-btn');
+
+  btn.addEventListener('click', toggleBar());
+})();
+```
+
+**jQuery**
+
+```javascript
+;(function () {
+  var btn = $(#'tw-btn');
+
+  btn.on('click', toggleBar());
+})();
+```
+
 ## Languages
 
 Currently supported languages are:
