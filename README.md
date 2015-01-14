@@ -6,6 +6,8 @@
 
 Download the [latest zip](https://github.com/johnie/talandewebb/archive/master.zip) and upload it via the plugins page in WordPress or unzip it in the `plugins` directory.
 
+You can also install it via `composer require johnie/talandewebb`
+
 ### Usage
 
 **Shortcode**
