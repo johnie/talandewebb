@@ -9,7 +9,7 @@
 * License: GPL2
 */
 
-/*  
+/*
     Copyright 2015 Johnie Hjelm <johniehjelm@me.com> (http://johnie.se)
 
     This program is free software; you can redistribute it and/or modify
@@ -50,8 +50,8 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
      * Current version of the plugin.
      * @var string
      */
-    protected $version = '1.0.0';
-    
+    protected $version = '1.1.1';
+
     /**
      * Languages codes.
      * @var array
@@ -64,7 +64,7 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
         'en-GB' => 'uk',
         'en-US' => 'en'
     );
-    
+
     /**
      * The default language.
      * @var string
@@ -154,7 +154,7 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
     public function _tw_enqueue() {
 
       $lang = get_bloginfo( 'language' );
-      
+
       if ( isset( $this->language[$lang] ) ) {
         $lang = $this->language[$lang];
       } else {
