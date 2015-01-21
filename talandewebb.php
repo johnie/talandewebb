@@ -123,17 +123,17 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
      */
     public function _tw_shortcode( $atts, $content = null ) {
 
-      extract( shortcode_atts( array(
+      shortcode_atts( array(
         'class' => false
-      ), $atts ) );
+      ), $atts );
 
       // Build the list of class names
       $classes = array(
         $this->tag
       );
 
-      if ( ! empty( $class ) ) {
-        $classes[] = esc_attr( $class );
+      if ( ! empty( $atts['class'] ) ) {
+        $classes[] = esc_attr( $atts['class'] );
       }
 
       // Output the terminal
