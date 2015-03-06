@@ -4,21 +4,39 @@
 
   <p>För att Talande Webb Plus ska fungera optimalt för dina besökare lägger du in ett script som sätter en cookie (kaka) på webbplatsen. På sidan där du beskriver hur Talande Webb fungerar lägger du till en förklarande text om Talande Webb Plus och en länk som tänder själva verktygsfältet för Talande Webb Plus.</p>
 
+  <form id="talandewebb_settings" action="" method="post">
+
+    <?php
+      // Save plugin options on post.
+      if ( talandewebb_is_method( 'post' ) ) {
+        _talandewebb_save_plugin_options();
+      }
+    ?>
+
+    <table class="form-table">
+      <tbody>
+        <tr>
+          <th class="row">
+            <label for="talandewebb_plugin_option_activation">Aktivera</label>
+          </th>
+          <td>
+            <input type="hidden" name="talandewebb_plugin_option_activation" value="off" />
+            <input type="checkbox" name="talandewebb_plugin_option_activation" <?php echo talandewebb_get_plugin_option( 'activation', "on" ) === "on" ? 'checked' : ''; ?> />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <?php submit_button(); ?>
+
+  </form>
+
   <h3 class="title">Kom igång</h3>
 
   <p>Placera någon av följande exempel under en sida, inlägg eller widget.</p>
 
   <table class="form-table">
     <tbody>
-      <tr>
-        <th class="row">
-          <label for="talandewebb_plugin_option_activation">Aktivera</label>
-        </th>
-        <td>
-          <input type="hidden" name="talandewebb_plugin_option_activation" value="off" />
-          <input type="checkbox" name="talandewebb_plugin_option_activation" <?php echo talandewebb_get_plugin_option( 'activation', "on" ) === "on" ? 'checked' : ''; ?> />
-        </td>
-      </tr>
       <tr>
         <th class="row">
           <label>Shortcode</label>

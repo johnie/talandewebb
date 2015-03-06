@@ -30,6 +30,9 @@ if ( ! defined( 'ABSPATH' ) ) {
   exit;
 }
 
+// Require API
+require_once(__DIR__ . '/inc/api.php');
+
 if ( ! class_exists( 'TalandeWebb' ) ) {
 
   class TalandeWebb {
@@ -161,8 +164,12 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
         $lang = $this->defaultLanguage;
       }
 
-      echo '<script type="text/javascript">var _baLocale = "' . $lang . '", _baMode = " ";</script>';
-      echo '<script type="text/javascript" src="https://www.browsealoud.com/plus/scripts/ba.js"></script>';
+      $activate_talandewebb = talandewebb_get_plugin_option( 'activation' );
+
+      if ( $activate_talandewebb == 'on' ) {
+        echo '<script type="text/javascript">var _baLocale = "' . $lang . '", _baMode = " ";</script>';
+        echo '<script type="text/javascript" src="https://www.browsealoud.com/plus/scripts/ba.js"></script>';
+      }
 
     }
 
