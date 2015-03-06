@@ -1,7 +1,7 @@
 <div class="wrap">
-  
+
   <h2><?php _e('Talande Webb Plus', 'talandewebb'); ?></h2>
-  
+
   <p>För att Talande Webb Plus ska fungera optimalt för dina besökare lägger du in ett script som sätter en cookie (kaka) på webbplatsen. På sidan där du beskriver hur Talande Webb fungerar lägger du till en förklarande text om Talande Webb Plus och en länk som tänder själva verktygsfältet för Talande Webb Plus.</p>
 
   <h3 class="title">Kom igång</h3>
@@ -10,6 +10,15 @@
 
   <table class="form-table">
     <tbody>
+      <tr>
+        <th class="row">
+          <label for="talandewebb_plugin_option_activation">Aktivera</label>
+        </th>
+        <td>
+          <input type="hidden" name="talandewebb_plugin_option_activation" value="off" />
+          <input type="checkbox" name="talandewebb_plugin_option_activation" <?php echo talandewebb_get_plugin_option( 'activation', "on" ) === "on" ? 'checked' : ''; ?> />
+        </td>
+      </tr>
       <tr>
         <th class="row">
           <label>Shortcode</label>
@@ -53,6 +62,6 @@ btn.addEventListener('click', toggleBar());</pre>
 <pre>var btn = $('#tw-btn');
 btn.on('click', toggleBar());</pre>
   </code>
-  
+
 </div>
 <!-- /.wrap -->
