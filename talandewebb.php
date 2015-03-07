@@ -37,47 +37,71 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
 
   class TalandeWebb {
 
+    private static $instance;
+
     /**
      * Tag identifier used by file includes and selector attributes.
      * @var string
      */
-    protected $tag = 'talandewebb';
+
+    public $tag;
+
 
     /**
      * User friendly name used to identify the plugin.
      * @var string
      */
-    protected $name = 'Talande Webb Plus';
+
+    public $name;
+
 
     /**
      * Current version of the plugin.
      * @var string
      */
-    protected $version = '1.1.1';
+
+    public $version;
+
 
     /**
      * Languages codes.
      * @var array
      */
-    protected $languages = array(
-        'sv-SE' => 'se',
-        'nb-NO' => 'no',
-        'fi'    => 'fi',
-        'de-DE' => 'de',
-        'en-GB' => 'uk',
-        'en-US' => 'en'
-    );
+
+    public $languages;
 
     /**
      * The default language.
      * @var string
      */
-    protected $defaultLanguage = 'se';
+
+    protected $defaultLanguage;
+
+
+    /**
+     * Talandewebb loader instance.
+     *
+     * @since 1.2.1
+     *
+     * @return object
+     */
+
+    public static function instance() {
+      if ( ! isset( self::$instance ) ) {
+         self::$instance = new static;
+         self::$instance->setup_globals();
+         self::$instance->setup_actions();
+      }
+
+      return self::$instance;
+    }
+
 
     /**
      * Add plugin settings menu
      * @access public
      */
+
     function _tw_settings_menu() {
       add_options_page( __( $this->name, $this->tag ), __( $this->name, $this->tag ), 'manage_options', 'tw-plugin-options', array( $this, '_tw_render_plugin_options' ) );
     }
@@ -87,6 +111,7 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
      * Render plugin settings page
      * @access public
      */
+
     function _tw_render_plugin_options() {
       include_once __DIR__ . '/views/plugin-options.php';
     }
@@ -96,9 +121,10 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
      * Initiate the plugin by setting the default values and assigning any
      * required actions and filters.
      *
-     * @access public
+     * @access private
      */
-    function __construct() {
+
+    private function setup_actions() {
 
       // Don't load Talande Webb in admin
       if ( ! is_admin() ):
@@ -113,6 +139,27 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
       // Add shortcode
       add_shortcode( $this->tag, array( $this, '_tw_shortcode' ) );
 
+    }
+
+
+    /**
+     * Global variables
+     */
+
+    private function setup_globals() {
+      $this->tag = 'talandewebb';
+      $this->name = 'Talande Webb Plus';
+      $this->description = 'För att Talande Webb Plus ska fungera optimalt för dina besökare lägger du in ett script som sätter en cookie (kaka) på webbplatsen. På sidan där du beskriver hur Talande Webb fungerar lägger du till en förklarande text om Talande Webb Plus och en länk som tänder själva verktygsfältet för Talande Webb Plus.';
+      $this->version = '1.2.1';
+      $this->languages = array(
+          'sv-SE' => 'se',
+          'nb-NO' => 'no',
+          'fi'    => 'fi',
+          'de-DE' => 'de',
+          'en-GB' => 'uk',
+          'en-US' => 'en'
+      );
+      $this->defaultLanguage = 'se';
     }
 
 
@@ -154,6 +201,7 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
      *
      * @access public
      */
+
     public function _tw_enqueue() {
 
       $lang = get_bloginfo( 'language' );
@@ -175,6 +223,12 @@ if ( ! class_exists( 'TalandeWebb' ) ) {
 
   }
 
-  new TalandeWebb();
-
 }
+
+if ( !function_exists( 'talandewebb' ) ) {
+  function talandewebb() {
+    return TalandeWebb::instance();
+  }
+}
+
+add_action( 'plugins_loaded', 'talandewebb' );

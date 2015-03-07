@@ -1,8 +1,8 @@
 <div class="wrap">
 
-  <h2><?php _e('Talande Webb Plus', 'talandewebb'); ?></h2>
+  <h2><?php echo talandewebb()->name; ?></h2>
 
-  <p>För att Talande Webb Plus ska fungera optimalt för dina besökare lägger du in ett script som sätter en cookie (kaka) på webbplatsen. På sidan där du beskriver hur Talande Webb fungerar lägger du till en förklarande text om Talande Webb Plus och en länk som tänder själva verktygsfältet för Talande Webb Plus.</p>
+  <p><?php echo talandewebb()->description; ?></p>
 
   <form id="talandewebb_settings" action="" method="post">
 
