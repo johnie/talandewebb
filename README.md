@@ -1,4 +1,4 @@
-# Talande Webb Plus
+# Talande Webb Plus [![Latest Stable Version](https://poser.pugx.org/johnie/talandewebb/v/stable.svg)](https://packagist.org/packages/johnie/talandewebb) [![License](https://poser.pugx.org/johnie/talandewebb/license.svg)](https://packagist.org/packages/johnie/talandewebb)
 
 > WordPress plugin for Funka Nu screen reader application Talande Webb Plus
 

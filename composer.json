@@ -1,7 +1,7 @@
 {
   "name": "johnie/talandewebb",
   "type": "wordpress-plugin",
-  "licence": "GPL2",
+  "license": "GPL2",
   "description": "WordPress plugin for Funka Nu screen reader application Talande Webb Plus",
   "homepage": "https://github.com/johnie/talandewebb",
   "authors": [
